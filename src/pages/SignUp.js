@@ -47,7 +47,7 @@ const SignUp = () => {
                 nav("/login");
             }
         } catch (err) {
-            console.log(err)
+            setErrorMsg('Server Error');
         }
     }
 

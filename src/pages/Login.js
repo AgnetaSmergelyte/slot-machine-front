@@ -40,7 +40,7 @@ const Login = () => {
                 nav("/play");
             }
         } catch (err) {
-            console.log(err)
+            setErrorMsg('Server Error');
         }
     }
 
