@@ -152,7 +152,7 @@ input {
 }
 
 .seven {
-  background-image: url("https://cdn4.iconfinder.com/data/icons/casino-general/512/777-512.png");
+  background-image: url("https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/18-512.png");
 }
 
 .banana {
@@ -202,7 +202,7 @@ input {
     background-image: url("https://cdn4.iconfinder.com/data/icons/slot-machines/512/Cherry-512.png");
   }
   15% {
-    background-image: url("https://cdn4.iconfinder.com/data/icons/casino-general/512/777-512.png");
+    background-image: url("https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/18-512.png");
   }
   30% {
     background-image: url("https://cdn4.iconfinder.com/data/icons/slot-machines/512/Bananas-512.png");
@@ -222,6 +222,47 @@ input {
   100% {
     background-image: url("https://cdn4.iconfinder.com/data/icons/slot-machines/512/Cherry-512.png");
   }
+}
+.leaderboard {
+  width: 600px;
+  max-width: 100vw;
+  margin-top: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.leaderboard-table-headers {
+  width: 100%;
+  display: flex;
+}
+.leaderboard-table-headers > div {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.leaderboard-table-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #66d4e7;
+}
+.leaderboard-table-row > div {
+  padding: 5px;
+  text-align: center;
+}
+
+.leaderboard-table-row:nth-child(odd) {
+  background-color: #0cc3e5;
+}
+
+.active-table {
+  background-color: #66d4e7;
+}
+
+.inactive-table {
+  background-color: #3085C3;
 }
 
 /*# sourceMappingURL=App.css.map */

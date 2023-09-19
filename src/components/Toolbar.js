@@ -20,15 +20,19 @@ const Toolbar = () => {
     return (
         <div>
             <div className="toolbar space-btw a-center">
-                {username && <b>Prisijungęs kaip: <em>{username}</em></b>}
-                <div className="d-flex g10">
-                    {!username && <NavLink className="menu-item" to="/register">Registruotis</NavLink>}
-                    {!username && <NavLink className="menu-item" to="/login">Prisijungti</NavLink>}
-                </div>
-                {username && <button onClick={logout}>Atsijungti</button>}
-            </div>
+                {username && <b>Logged in as: <em>{username}</em></b>}
+                {!username && <div className="d-flex g10">
+                    <NavLink className="menu-item" to="/register">Sign Up</NavLink>
+                    <NavLink className="menu-item" to="/login">Log In</NavLink>
+                </div>}
+                {username && <NavLink className="menu-item" to="/play">Play</NavLink>}
+                {username && <NavLink className="menu-item" to="/leaderboard">Leaderboard</NavLink>}
+                {username && <button onClick={logout}>Log Out</button>
+            }
         </div>
-    );
+</div>
+)
+    ;
 };
 
 export default Toolbar;

@@ -16,7 +16,7 @@ const Play = () => {
 
     function roll() {
         if (money - selectedSum < 0) {
-            setError('Nepakankamas pinigų likutis');
+            setError('Not enough money');
             return;
         } else {
             setSpinning(true);
@@ -55,12 +55,12 @@ const Play = () => {
                     }, 2000);
                     setTimeout(() => {
                         setSlot3(data.data.slots[2]);
-                        if (data.data.win) setSuccess(`Laimėta ${data.data.winnings}€ !!!`);
+                        if (data.data.win) setSuccess(`Won ${data.data.winnings}€ !!!`);
                         dispatch(changeMoney(Number(data.data.payback)));
                         setSpinning(false);
                     }, 3000);
                 } else {
-                    setError('Nepakankamas pinigų likutis');
+                    setError(data.message);
                 }
             })
             .catch(error => setError('Server error'))
@@ -68,20 +68,20 @@ const Play = () => {
 
     return (
         <div className="container">
-            <h1>Pinigai: {money}€</h1>
+            <h1>Money: {money}€</h1>
             <h2 className="text-green">{success}</h2>
             <div className="slots">
                 <div className={slot1}></div>
                 <div className={slot2}></div>
                 <div className={slot3}></div>
             </div>
-            <h2>Statoma suma:</h2>
+            <h2>Bid:</h2>
             <div className="d-flex g10">
                 <button className={selectedSum === 1 ? "btn-number selected" : "btn-number"} onClick={() => setSelectedSum(1)}>1€</button>
                 <button className={selectedSum === 5 ? "btn-number selected" : "btn-number"} onClick={() => setSelectedSum(5)}>5€</button>
                 <button className={selectedSum === 10 ? "btn-number selected" : "btn-number"} onClick={() => setSelectedSum(10)}>10€</button>
             </div>
-            <button className="btn-big" onClick={!spinning ? () => roll() : null}>SUKTI</button>
+            <button className="btn-big" onClick={!spinning ? () => roll() : null}>ROLL</button>
             <b className="text-red">{error}</b>
         </div>
     );

@@ -7,6 +7,7 @@ import {useEffect} from "react";
 import {changeId, changeName, changeMoney} from "./features/user";
 import {useDispatch} from "react-redux";
 import Play from "./pages/Play";
+import Leaderboard from "./pages/Leaderboard";
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
               <Route path="/login" element={<Login />}/>
               <Route path="/register" element={<SignUp />}/>
               <Route path="/play" element={<Play />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
       </div>
   );
